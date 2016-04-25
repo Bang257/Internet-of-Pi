@@ -1,0 +1,23 @@
+Raspberry Pi:
+Install raspbian
+
+sudo apt-get upgrade
+sudo apt-get install python-requests
+
+install weather api
+https://code.google.com/p/python-weather-api/
+
+install pygame
+sudo apt-get install python-pygame
+
+install scapy
+https://phaethon.github.io/scapy/api/installation.html
+ sudo apt-get install tcpdump 
+
+add "Siren.mp3" to downloads folder
+
+Modify script credentials for email etc.
+
+copy scripts to desired destination
+
+run your new python scripts
