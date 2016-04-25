@@ -83,7 +83,7 @@ def alarm():
 	
 	if tme>20 or tme<7:
 		pygame.mixer.init()
-		pygame.mixer.music.load("/home/pi/Downloads/Siren.mp3")  #sound source
+		pygame.mixer.music.load("/home/pi/Downloads/Siren.wav")  #sound source
 		pygame.mixer.music.play()
 		while pygame.mixer.music.get_busy() == True:
 			continue
