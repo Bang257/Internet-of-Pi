@@ -14,10 +14,11 @@ install scapy
 https://phaethon.github.io/scapy/api/installation.html
  sudo apt-get install tcpdump 
 
-add "Siren.mp3" to downloads folder
+add "Siren.wav" to desired path (downloads in my case)
 
-Modify script credentials for email etc.
+Modify script email credentials and sound file path. And change cloudstitch URL if use time management
 
 copy scripts to desired destination
 
 run your new python scripts
+ sudo python rasppi.py
