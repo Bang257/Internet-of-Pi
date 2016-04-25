@@ -1,6 +1,6 @@
-Raspberry Pi:
 Install raspbian
 
+terminal:
 sudo apt-get upgrade
 sudo apt-get install python-requests
 
