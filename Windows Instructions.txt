@@ -1,0 +1,15 @@
+install python, pip
+
+open command prompt and run
+	python -m pip install --upgrade pip
+	pip install requests
+	pip install scapy-python3
+
+	download and unzip pywapi
+	cmd again: navigate to pywapi dir
+		python setup.py build
+		python setup.py install
+		
+Modify your python script credentials
+
+run your new python scripts
