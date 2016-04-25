@@ -11,7 +11,6 @@ import smtplib
 import pywapi
 import requests
 import time
-#import pygame
 import winsound
 
 MAGIC_FORM_URL = 'http://api.cloudstitch.io/' #change magic form URL to your account
