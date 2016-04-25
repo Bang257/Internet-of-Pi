@@ -9,7 +9,9 @@ open command prompt and run
 	cmd again: navigate to pywapi dir
 		python setup.py build
 		python setup.py install
-		
-Modify your python script credentials
+
+Move siren.wav to a desired directory & change corresponding location in the python script		
+
+Modify your python script email credentials
 
 run your new python scripts
