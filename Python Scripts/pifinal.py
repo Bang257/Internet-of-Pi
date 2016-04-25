@@ -13,7 +13,7 @@ import requests
 import time
 import pygame
 
-MAGIC_FORM_URL = 'http://api.cloudstitch.io/' #Insert your cloudstich url here
+MAGIC_FORM_URL = 'http://api.cloudstitch.io/nuclearmage/magic-form/datasources/sheet/Data'
 
 timing = 0
 start_Time = ""
@@ -57,13 +57,15 @@ def weather():
 	print (weather_String)
 	send_Mail(weather_String)
 	
-def send_Mail(msg):
-	fromaddr = 'myemail@gmail.com' #insert from address   myemail@gmail.com
-	toaddrs  = '12345678910@srtwireless.com' #insert to address
+def send_Mail(m):
+	fromaddr = 'rasppi257@gmail.com'
+	toaddrs  = '17018182416@srtwireless.com'
+	#toaddrs  = 'curt.hill@vcsu.edu'
+	msg = m
 	
 	# Credentials
-	username = 'myemail@gmail.com'  #Your gmail account username  myemail@gmail.com
-	password = 'password'          #Your gmail password
+	username = 'rasppi257@gmail.com'
+	password = 'BellaDog257'
 
 	# The actual mail send
 	server = smtplib.SMTP('smtp.gmail.com:587')
@@ -81,9 +83,10 @@ def alarm():
 	tme = int(time.strftime("%H"))
 	#If the time is between 8 pm and 7 am, play sound..else send text
 	
+
 	if tme>20 or tme<7:
 		pygame.mixer.init()
-		pygame.mixer.music.load("/home/pi/Downloads/Siren.mp3")  #sound source
+		pygame.mixer.music.load("/home/pi/Downloads/Siren.mp3")
 		pygame.mixer.music.play()
 		while pygame.mixer.music.get_busy() == True:
 			continue
@@ -110,8 +113,7 @@ def morningWeather():
 def arp_display(pkt):
 	morningWeather()
 
-	#replace mac addresses with your Dash button (or other device's) MAC address
-	if pkt[ARP].op == 1:
+	if pkt[ARP].op == 1: #who-has (request)
 		if pkt[ARP].psrc == '0.0.0.0': # ARP Probe
 			if pkt[ARP].hwsrc == '74:75:48:e4:bb:da': # Hefty
 				print ("Pushed Hefty - Sending weather message")
@@ -128,5 +130,5 @@ def arp_display(pkt):
 			else:
 				print ("ARP Probe from unknown device: " + pkt[ARP].hwsrc)
 
-#print sniff(prn=arp_display, filter="arp", store=0, count=20) #program stops after 20 seconds
+#print sniff(prn=arp_display, filter="arp", store=0, count=20)
 print (sniff(prn=arp_display, filter="arp", store=0))
