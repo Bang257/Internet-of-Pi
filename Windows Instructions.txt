@@ -1,3 +1,6 @@
+This program will sniff for ARP packets sent my Amazon Dash Buttons. Upon pressing the button, this program will catch the network request, determine which Dash button sent the request, and run a command based on the MAC address. This proof-of-concept code has 3 features -- Weather text messaging, a time management system built into Google Docs, and a Life Alert feature.
+	In the future, I would like to tie this with other home automation systems like Amazon's Echo
+
 install python, pip
 
 open command prompt and run
